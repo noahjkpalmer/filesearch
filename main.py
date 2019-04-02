@@ -12,7 +12,8 @@ import json
 from FileSearcher import FileSearcher
 
 def main():
-	filesearcher = FileSearcher("../oldsite/")
+	directorypath = input("Directory Path: ")
+	filesearcher = FileSearcher(directorypath)
 	passwords = None
 	with open("passwords.json") as f:
 		passwords = json.load(f)
