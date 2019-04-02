@@ -12,7 +12,7 @@ import json
 from FileSearcher import FileSearcher
 
 def main():
-	directorypath = input("Directory Path: ")
+	directorypath = "/media/hd_internal-02/www/liquidweb"#input("Directory Path: ")
 	filesearcher = FileSearcher(directorypath)
 	passwords = None
 	with open("passwords.json") as f:
