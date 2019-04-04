@@ -19,7 +19,7 @@ def log(data):
 
 
 def main():
-	directorypath = "../oldsite"#"/media/hd_internal-02/www/liquidweb"#input("Directory Path: ")
+	directorypath = "/media/hd_internal-02/www/liquidweb"#input("Directory Path: ")
 	filesearcher = FileSearcher(directorypath)
 	passwords = None
 	with open("passwords.json") as f:
