@@ -19,19 +19,20 @@ def log(data):
 
 
 def main():
-	directorypath = "/media/hd_internal-02/www/liquidweb"#input("Directory Path: ")
+	directorypath = "../oldsite"#"/media/hd_internal-02/www/liquidweb"#input("Directory Path: ")
 	filesearcher = FileSearcher(directorypath)
 	passwords = None
 	with open("passwords.json") as f:
 		passwords = json.load(f)
-	for passtype in passwords.keys():
-		locations = filesearcher.search(passwords[passtype])
-		log("Password Type: " + passtype)
-		if not bool(locations):
+	data = filesearcher.search(passwords)
+
+	for passtype in data.keys():
+		log("TYPE: " + passtype)
+		if not bool(data[passtype]):
 			log("Password is not present in directory!")
 		else:
-			for key in locations.keys():
-				log("Path: " + key + " | Lines: " + str(locations[key]))
+			for location in data[passtype].keys():
+				log("PATH: " + location + " | LINES: " + str(data[passtype][location]))
 		log("")
 
 if __name__ == '__main__':
